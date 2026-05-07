@@ -9,19 +9,6 @@
 - Доступность (ARIA-атрибуты)
 - Производительность (lazy loading, preload)
 
-## Структура
-├── index.html
-├── css/
-│ ├── main.css
-│ ├── variables.css
-│ ├── reset.css
-│ ├── base.css
-│ └── components/
-├── js/
-│ ├── main.js
-│ └── components/
-└── img/
-
 ## Запуск
 Откройте `index.html` в браузере или через Live Server.
 
