@@ -1,0 +1,200 @@
+/**
+ * ================================================
+ * ПОХОЖИЕ ТОВАРЫ (RELATED PRODUCTS / CAROUSEL)
+ * ================================================
+ */
+
+.related-products {
+    margin-bottom: var(--spacing-12);
+}
+
+.related-products__title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-6);
+    color: var(--color-text-primary);
+}
+
+/* Контейнер карусели */
+.carousel {
+    position: relative;
+    padding: 0 var(--spacing-10);
+}
+
+.carousel__track {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--spacing-2);
+}
+
+.carousel__track::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carousel__track::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-dark);
+    border-radius: var(--border-radius-full);
+}
+
+.carousel__wrapper {
+    display: flex;
+    gap: var(--spacing-4);
+    width: max-content;
+}
+
+/* Кнопки навигации */
+.carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-full);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.carousel__btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+.carousel__btn--prev {
+    left: 0;
+}
+
+.carousel__btn--next {
+    right: 0;
+}
+
+/* Карточка товара */
+.related-card {
+    flex: 0 0 280px; /* Фиксированная ширина */
+    scroll-snap-align: start;
+    background-color: var(--color-bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-4);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Контейнер изображения - ФИКСИРОВАННАЯ ВЫСОТА */
+.related-card__image {
+    position: relative;
+    margin-bottom: var(--spacing-4);
+    height: 250px; /* Фиксированная высота для всех изображений */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+}
+
+/* Само изображение */
+.related-card__img,
+.related-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Сохраняет пропорции, вписывает в контейнер */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Бейджи */
+.related-card__badge {
+    position: absolute;
+    top: var(--spacing-2);
+    left: var(--spacing-2);
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-1) var(--spacing-2);
+    border-radius: var(--border-radius-sm);
+    z-index: 1;
+}
+
+.related-card__badge--sale {
+    background-color: var(--color-error);
+    color: var(--color-white);
+}
+
+/* Заголовок */
+.related-card__title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-2);
+    line-height: 1.4;
+    min-height: 40px;
+    color: var(--color-text-primary);
+}
+
+.related-card__title a {
+    color: inherit;
+}
+
+.related-card__title a:hover {
+    color: var(--color-primary);
+}
+
+/* Цена */
+.related-card__price {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-top: auto;
+    margin-bottom: var(--spacing-4);
+}
+
+/* Кнопка */
+.related-card .btn {
+    width: 100%;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .related-card {
+        flex: 0 0 240px;
+    }
+    
+    .related-card__image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        padding: 0 var(--spacing-2);
+    }
+    
+    .carousel__btn {
+        display: none;
+    }
+    
+    .related-card {
+        flex: 0 0 200px;
+    }
+    
+    .related-card__image {
+        height: 180px;
+    }
+}

@@ -1,0 +1,120 @@
+/**
+ * ================================================
+ * ОПЦИИ ТОВАРА (ЦВЕТ, КОЛИЧЕСТВО)
+ * ================================================
+ */
+
+.product-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+    padding: var(--spacing-4) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.product-options__group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    flex-wrap: wrap;
+}
+
+.product-options__label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    min-width: 60px;
+}
+
+/* ===== ВЫБОР ЦВЕТА ===== */
+
+.product-options__colors {
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.product-options__color {
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.product-options__color:hover,
+.product-options__color--active {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.product-options__color-swatch {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-full);
+}
+
+/* ===== КОЛИЧЕСТВО ===== */
+
+.quantity {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+}
+
+.quantity__btn {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+    transition: background-color var(--transition-fast);
+}
+
+.quantity__btn:hover {
+    background-color: var(--color-border);
+}
+
+.quantity__btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.quantity__input {
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    border: none;
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    -moz-appearance: textfield;
+    appearance: textfield; /* ✅ Добавлено стандартное свойство */
+}
+
+.quantity__input::-webkit-outer-spin-button,
+.quantity__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+    .product-options__group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-3);
+    }
+    
+    .product-options__label {
+        min-width: auto;
+    }
+}

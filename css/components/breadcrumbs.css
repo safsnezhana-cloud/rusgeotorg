@@ -1,0 +1,66 @@
+/**
+ * ================================================
+ * ХЛЕБНЫЕ КРОШКИ (BREADCRUMBS)
+ * ================================================
+ */
+
+.breadcrumbs {
+    padding: var(--spacing-4) 0;
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumbs__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-2); /* Увеличил отступ */
+    font-size: var(--font-size-sm);
+}
+
+.breadcrumbs__item {
+    display: flex;
+    align-items: center;
+}
+
+/* Добавляем слеш после каждого элемента, кроме последнего */
+.breadcrumbs__item:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--spacing-2);
+    color: var(--color-border-dark);
+    opacity: 0.6;
+}
+
+.breadcrumbs__link {
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+}
+
+.breadcrumbs__link:hover {
+    color: var(--color-primary);
+}
+
+.breadcrumbs__item--current {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.breadcrumbs__current {
+    color: inherit;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+    .breadcrumbs {
+        padding: var(--spacing-3) 0;
+    }
+    
+    .breadcrumbs__list {
+        font-size: var(--font-size-xs);
+        gap: var(--spacing-1);
+    }
+    
+    .breadcrumbs__item:not(:last-child)::after {
+        margin-left: var(--spacing-1);
+    }
+}

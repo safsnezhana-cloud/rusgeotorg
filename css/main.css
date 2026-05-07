@@ -1,0 +1,19 @@
+/**
+ * ================================================
+ * ГЛАВНЫЙ CSS ФАЙЛ (MAIN.CSS)
+ * Импорт всех модулей
+ * ================================================
+ */
+
+@import 'variables.css';
+@import 'reset.css';
+@import 'base.css';
+@import 'components/buttons.css';
+@import 'components/header.css';
+@import 'components/breadcrumbs.css';
+@import 'components/product-gallery.css';
+@import 'components/product-info.css';
+@import 'components/product-options.css';
+@import 'components/tabs.css';
+@import 'components/related-products.css';
+@import 'components/footer.css';

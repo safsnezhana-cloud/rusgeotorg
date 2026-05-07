@@ -1,0 +1,115 @@
+/**
+ * ================================================
+ * ПОДВАЛ (FOOTER)
+ * ================================================
+ */
+
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: var(--spacing-10) 0 var(--spacing-6);
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+}
+
+.footer__column--about {
+    grid-column: span 1;
+}
+
+.footer__logo {
+    margin-bottom: var(--spacing-4);
+    font-size: var(--font-size-2xl);
+}
+
+.footer__text {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-4);
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.footer__phone,
+.footer__email {
+    color: var(--color-white);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-lg);
+}
+
+.footer__title {
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.footer__link {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+    color: var(--color-accent);
+}
+
+.footer__bottom {
+    padding-top: var(--spacing-6);
+    border-top: 1px solid var(--color-primary-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-sm);
+}
+
+.footer__policy {
+    color: var(--color-text-muted);
+}
+
+.footer__policy:hover {
+    color: var(--color-white);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer__column--about {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-6);
+    }
+    
+    .footer__column--about {
+        grid-column: span 1;
+    }
+    
+    .footer__bottom {
+        flex-direction: column;
+        gap: var(--spacing-2);
+        text-align: center;
+    }
+}

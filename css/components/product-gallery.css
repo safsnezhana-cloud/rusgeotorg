@@ -1,0 +1,121 @@
+/**
+ * ================================================
+ * ГАЛЕРЕЯ ТОВАРА (PRODUCT GALLERY)
+ * ================================================
+ */
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+/* ===== ОСНОВНОЕ ИЗОБРАЖЕНИЕ ===== */
+
+.gallery__main {
+    background-color: var(--color-bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-4);
+    box-shadow: var(--shadow-base);
+}
+
+.gallery__main-wrapper {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-base);
+    overflow: hidden;
+}
+
+.gallery__main-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform var(--transition-base);
+}
+
+.gallery__main-wrapper:hover .gallery__main-image {
+    transform: scale(1.05);
+}
+
+/* Бейдж зума */
+.gallery__zoom-badge {
+    position: absolute;
+    bottom: var(--spacing-3);
+    right: var(--spacing-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-full);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.gallery__main-wrapper:hover .gallery__zoom-badge {
+    opacity: 1;
+}
+
+/* ===== ПРЕВЬЮ ===== */
+
+.gallery__thumbnails {
+    display: flex;
+    gap: var(--spacing-3);
+}
+
+.gallery__thumb {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 80px;
+    padding: var(--spacing-1);
+    background-color: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    overflow: hidden;
+}
+
+.gallery__thumb:hover,
+.gallery__thumb--active {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.gallery__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius-base) - 2px);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+    .gallery__thumbnails {
+        overflow-x: auto;
+        padding-bottom: var(--spacing-2);
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .gallery__thumb {
+        flex: 0 0 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery__main {
+        padding: var(--spacing-3);
+    }
+    
+    .gallery__thumb {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,188 @@
+/**
+ * ================================================
+ * БАЗОВЫЕ СТИЛИ (BASE STYLES)
+ * Общие классы и утилиты
+ * ================================================
+ */
+
+/* ===== КОНТЕЙНЕР ===== */
+
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-5);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-4);
+    }
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+
+.main {
+    padding: var(--spacing-6) 0;
+    min-height: calc(100vh - var(--header-height) - 300px);
+}
+
+/* ===== БЕЙДЖИ ===== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-full);
+    vertical-align: middle;
+    margin-left: var(--spacing-2);
+}
+
+/* ===== СПИСКИ С МАРКЕРАМИ ===== */
+
+.features-list {
+    margin: var(--spacing-4) 0;
+}
+
+.features-list__item {
+    position: relative;
+    padding-left: var(--spacing-6);
+    margin-bottom: var(--spacing-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+.features-list__item::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: var(--font-size-xl);
+    line-height: 1;
+}
+
+/* ===== ДОСТАВКА И ОПЛАТА ===== */
+
+.delivery-list,
+.payment-list {
+    margin: var(--spacing-4) 0;
+}
+
+.delivery-list__item,
+.payment-list__item {
+    padding: var(--spacing-3) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.delivery-list__item:last-child,
+.payment-list__item:last-child {
+    border-bottom: none;
+}
+
+/* ===== ФОРМЫ ===== */
+
+.form-group {
+    margin-bottom: var(--spacing-5);
+}
+
+.form-group__label {
+    display: block;
+    margin-bottom: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+
+.form-group__input,
+.form-group__textarea {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-base);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius-base);
+    background-color: var(--color-white);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group__input:focus,
+.form-group__textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(62, 39, 35, 0.1);
+}
+
+.form-group__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ===== ЛОГОТИП ===== */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: 2px;
+}
+
+.logo__text {
+    color: var(--color-white);
+}
+
+.logo__accent {
+    color: var(--color-accent);
+}
+
+/* ===== HAMBURGER MENU ===== */
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-white);
+    position: relative;
+    transition: background-color var(--transition-fast);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: transform var(--transition-fast);
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    top: 7px;
+}
+
+/* Анимация при открытии меню */
+.header__mobile-toggle[aria-expanded="true"] .hamburger {
+    background-color: transparent;
+}
+
+.header__mobile-toggle[aria-expanded="true"] .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.header__mobile-toggle[aria-expanded="true"] .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}

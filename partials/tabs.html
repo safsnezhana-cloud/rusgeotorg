@@ -1,0 +1,77 @@
+<!-- ТАБЫ - отдельно от карточки товара -->
+<section class="product-tabs tabs">
+    <div class="tabs__nav" role="tablist">
+        <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true" aria-controls="tab-description" id="tab-btn-description">
+            Описание
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-specs" id="tab-btn-specs" tabindex="-1">
+            Характеристики
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-reviews" id="tab-btn-reviews" tabindex="-1">
+            Отзывы <span class="badge">12</span>
+        </button>
+        <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-delivery" id="tab-btn-delivery" tabindex="-1">
+            Доставка и оплата
+        </button>
+    </div>
+    
+    <div class="tabs__content">
+        <!-- Описание -->
+        <div class="tabs__pane tabs__pane--active" role="tabpanel" id="tab-description" aria-labelledby="tab-btn-description">
+            <h2 class="tabs__pane-title">О пирометре Fluke 62 MAX</h2>
+            <div class="tabs__pane-content">
+                <p>Fluke 62 MAX — профессиональный инфракрасный пирометр для точного бесконтактного измерения температур от −30°C до +650°C.</p>
+                <h3>Преимущества:</h3>
+                <ul class="features-list">
+                    <li class="features-list__item">Точность ±1°C</li>
+                    <li class="features-list__item">Защита IP54</li>
+                    <li class="features-list__item">Ударопрочность до 3 м</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Характеристики -->
+        <div class="tabs__pane" role="tabpanel" id="tab-specs" aria-labelledby="tab-btn-specs" hidden>
+            <h2 class="tabs__pane-title">Технические характеристики</h2>
+            <table class="specs-table">
+                <tbody>
+                    <tr class="specs-table__row">
+                        <th class="specs-table__label">Диапазон температур</th>
+                        <td class="specs-table__value">−30°C ... +650°C</td>
+                    </tr>
+                    <tr class="specs-table__row">
+                        <th class="specs-table__label">Погрешность</th>
+                        <td class="specs-table__value">±1°C или ±1%</td>
+                    </tr>
+                    <tr class="specs-table__row">
+                        <th class="specs-table__label">Спектральный диапазон</th>
+                        <td class="specs-table__value">8...14 мкм</td>
+                    </tr>
+                    <tr class="specs-table__row">
+                        <th class="specs-table__label">Оптическое разрешение</th>
+                        <td class="specs-table__value">12:1</td>
+                    </tr>
+                    <tr class="specs-table__row">
+                        <th class="specs-table__label">Защита</th>
+                        <td class="specs-table__value">IP54</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Отзывы -->
+        <div class="tabs__pane" role="tabpanel" id="tab-reviews" aria-labelledby="tab-btn-reviews" hidden>
+            <h2 class="tabs__pane-title">Отзывы покупателей</h2>
+            <p>Пока нет отзывов.</p>
+        </div>
+        
+        <!-- Доставка -->
+        <div class="tabs__pane" role="tabpanel" id="tab-delivery" aria-labelledby="tab-btn-delivery" hidden>
+            <h2 class="tabs__pane-title">Доставка и оплата</h2>
+            <ul class="delivery-list">
+                <li class="delivery-list__item">Курьером по Москве — 500 ₽</li>
+                <li class="delivery-list__item">СДЭК — от 300 ₽</li>
+            </ul>
+        </div>
+    </div>
+</section>

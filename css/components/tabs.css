@@ -1,0 +1,135 @@
+/**
+ * ================================================
+ * ВКЛАДКИ (TABS)
+ * ================================================
+ */
+
+.tabs {
+    margin-bottom: var(--spacing-12);
+    background-color: var(--color-bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-base);
+    overflow: hidden;
+}
+
+/* Навигация табов */
+.tabs__nav {
+    display: flex;
+    border-bottom: 2px solid var(--color-border);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Скрываем скроллбар */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE и Edge */
+}
+
+/* Скрываем скроллбар для Webkit браузеров */
+.tabs__nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.tabs__tab {
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+    transition: color var(--transition-fast);
+}
+
+.tabs__tab:hover {
+    color: var(--color-primary);
+}
+
+/* Активная вкладка */
+.tabs__tab--active {
+    color: var(--color-primary);
+}
+
+.tabs__tab--active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+}
+
+/* Содержимое табов */
+.tabs__content {
+    padding: var(--spacing-8);
+}
+
+.tabs__pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tabs__pane--active {
+    display: block;
+}
+
+.tabs__pane-title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-4);
+    color: var(--color-text-primary);
+}
+
+.tabs__pane-content p {
+    margin-bottom: var(--spacing-4);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Таблица характеристик */
+.specs-table {
+    width: 100%;
+    margin-top: var(--spacing-4);
+}
+
+.specs-table__row {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.specs-table__row:last-child {
+    border-bottom: none;
+}
+
+.specs-table__label {
+    padding: var(--spacing-3) var(--spacing-4);
+    width: 40%;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    background-color: transparent; /* ✅ Убран серый фон */
+}
+
+.specs-table__value {
+    padding: var(--spacing-3) var(--spacing-4);
+    color: var(--color-text-secondary);
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .tabs__content {
+        padding: var(--spacing-4);
+    }
+    
+    .specs-table__label {
+        width: 45%;
+        font-size: var(--font-size-xs);
+    }
+    
+    .specs-table__value {
+        font-size: var(--font-size-xs);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
